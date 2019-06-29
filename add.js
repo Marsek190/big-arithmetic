@@ -18,7 +18,7 @@ async function addition(a, b) {
     return ((a, b) => {
         let result = '';
         let addited = 0;
-        while (a.length != 0 || b.length != 0 || addited != 0) {
+        while (a.length !== 0 || b.length !== 0 || addited !== 0) {
             const sumOfTails = parseInt(a.pop() || '0') + parseInt(b.pop() || '0') + addited;
             addited = (sumOfTails > 9) ? 1 : 0;
             result += (addited != 0) ? sumOfTails % 10 : sumOfTails;
