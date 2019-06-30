@@ -17,11 +17,11 @@ async function addition(a, b) {
     }
     return ((a, b) => {
         let result = '';
-        let addited = 0;
-        while (a.length !== 0 || b.length !== 0 || addited !== 0) {
-            const sumOfTails = parseInt(a.pop() || '0') + parseInt(b.pop() || '0') + addited;
-            addited = (sumOfTails > 9) ? 1 : 0;
-            result += (addited !== 0) ? sumOfTails % 10 : sumOfTails;
+        let added = 0;
+        while (a.length !== 0 || b.length !== 0 || added !== 0) {
+            const sumOfTails = parseInt(a.pop() || '0') + parseInt(b.pop() || '0') + added;
+            added = (sumOfTails > 9) ? 1 : 0;
+            result += (added !== 0) ? sumOfTails % 10 : sumOfTails;
         }
         return [...result].reverse().join('');
     })(a.split(''), b.split(''));
