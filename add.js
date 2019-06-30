@@ -41,8 +41,8 @@ async function addition(a, b) {
     return (function getResult(a, b, result = '', added = 0) {
         if (a.length !== 0 || b.length !== 0 || added !== 0) {
             const sumOfTails = parseInt(a.pop() || '0') + parseInt(b.pop() || '0') + added;
-			const moreThanNine = sumOfTails > 9;
-			return getResult(a, b, (moreThanNine ? sumOfTails % 10 : sumOfTails) + result, moreThanNine ? 1 : 0);
+	    const moreThanNine = sumOfTails > 9;
+            return getResult(a, b, (moreThanNine ? sumOfTails % 10 : sumOfTails) + result, moreThanNine ? 1 : 0);
         }
         return result;
     })(a.split(''), b.split(''));
