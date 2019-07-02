@@ -18,14 +18,15 @@ async function addition(a, b) {
     return ((a, b) => {
         let result = '';
         let added = 0;
-        while (a.length !== 0 || b.length !== 0 || added !== 0) {
-            const sumOfTails = parseInt(a.pop() || '0') + parseInt(b.pop() || '0') + added;
+        for (let i = Math.max(a.length, b.length) - 1; i >= 0 || added !== 0; i--) {
+            const sumOfTails = parseInt(a[i] || '0') + parseInt(b[i] || '0') + added;
             added = (sumOfTails > 9) ? 1 : 0;
             result += (added !== 0) ? sumOfTails % 10 : sumOfTails;
         }
         return [...result].reverse().join('');
     })(a.split(''), b.split(''));
 }
+
 /* recursive option
 async function addition(a, b) {
     if (typeof a !== 'string' || typeof b !== 'string') {
